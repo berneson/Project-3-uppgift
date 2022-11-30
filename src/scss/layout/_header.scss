@@ -1,0 +1,25 @@
+@use '../utilities/responsive';
+
+.site-header {
+    position: fixed;
+    height: 160px;
+    width: 100%;
+    display: grid;
+    padding: 0 var(--gap-xl);
+    z-index: 999;
+
+    @include responsive.max(40rem) { //Loggan och hamburgarn åker ut till kanten 1 rem (gap-l)
+        padding: 0 var(--gap-l);
+    }
+
+    // & = .site-header__inner
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__branding {
+        display: block;
+    }
+}
