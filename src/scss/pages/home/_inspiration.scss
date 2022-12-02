@@ -4,57 +4,111 @@
 
 .inspiration {
     background-color: var(--color-dark-900);
-}
 
-.inspiration__title {
-    font-family: var(--font-serif);
-    font-size: var(--font-size-5);
-    margin: 0;
-    padding-top: var(--gap-xl);
-    color: var(--color-accent);
+    &__title {
 
-}
+        font-family: var(--font-serif);
+        font-size: var(--font-size-5);
+        margin: 0;
+        padding-top: var(--gap-xl);
+        color: var(--color-accent);
+    }
 
-.inspiration__content {
-    margin-top: var(--gap-s);
-    font-family: var(--font-sans);
-    font-size: var(--font-size-2);
-}
+    &__content {
 
-.inspiration__title, 
-.inspiration__content {
+        margin-top: var(--gap-s);
+        font-family: var(--font-sans);
+        font-size: var(--font-size-2);
+        color: var(--color-dark-200);
+    }
+
+    &__content--text {
+        margin-top: -20px;
+        font-family: var(--font-sans);
+        font-size: var(--font-size-2);
+        color: var(--color-dark-200);
+        display: flex;
+        justify-content: center;
+    }
+
+    &__title, 
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__button {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    color: #222;
+    font-weight: 400;
+    font-size: var(--font-size-2);
+    
+    }
 
-.inspiration__button {
-display: flex;
-justify-content: center;
-align-items: center;
-color: #222;
-
-}
-
-svg {
+    svg {
     opacity: 0.34;
-}
+    
+    }
 
-.inspiration__button:hover {
+    &__button:hover {
     color: var(--color-dark-300);
+    }
+
+    // &__button button:hover {
+    //     transform: rotate(90deg);
+
+    // }
+    
 }
 
-// PICTURE
 
-.image__inner {
-    max-width: 1080px;
-    margin: 32px auto;
+
+
+// IMAGE
+
+.image {
+    
+    &__first {
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    
+    &__inner {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1080px;
+        margin: 32px auto;
+        box-shadow: 5px 5px 20px -5px rgba($color: #000000, $alpha: 0.3)
+    }
+
+    &__text {
+        position: absolute;
+        font-family: var(--font-serif);
+        font-size: var(--font-size-4);
+        color: var(--color-light);
+        opacity: 0.70;
+
+    }
+
+    
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: #0000001e
+    }
+    
 }
 
-.inspiration__image { 
-    display: grid;
-    position: relative;
-}
 
 //RATING
 
@@ -84,7 +138,17 @@ svg {
     &__button:hover {
         color: var(--color-dark-300);
     }
+
+    &__content--text {
+        margin-top: -20px;
+        font-family: var(--font-sans);
+        font-size: var(--font-size-2);
+        color: var(--color-dark-200);
+        display: flex;
+        justify-content: center;   
+    }
 }
+
 
 
 
@@ -97,6 +161,7 @@ svg {
     gap: var(--gap-s);
     grid-template-columns: repeat(3, 350px);
     grid-template-rows: repeat(2, 250px);
+    
 
     &__item {
         margin: 0;
@@ -108,6 +173,7 @@ svg {
         object-fit: cover;
         height: 100%;
         width: 100%;
+        box-shadow: 5px 5px 20px -5px rgba($color: #000000, $alpha: 0.1)
     }
 
     &__item--tall {
