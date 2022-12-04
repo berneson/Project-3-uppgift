@@ -22,7 +22,7 @@
   --color-accent-600: #8a6086;
   --color-accent-700: #8a6086;
   --color-accent-800: #8a6086;
-  --color-accent-900: #8a6086;
+  --color-accent-900: #cab390;
   --color-light: #fff;
   --color-light-200: #f5f3eb;
   --color-light-300: #f5f3eb;
@@ -452,19 +452,43 @@ li {
 
 .inspiration {
   background-color: var(--color-dark-900);
+  margin: 0;
+  padding: 0;
+}
+@media screen and (max-width: 50rem) {
+  .inspiration__inner {
+    margin-top: -40px;
+  }
 }
 .inspiration__title {
   font-family: var(--font-serif);
   font-size: var(--font-size-5);
   margin: 0;
   padding-top: var(--gap-xl);
-  color: var(--color-accent);
+  color: var(--color-accent-900);
+}
+@media screen and (max-width: 50rem) {
+  .inspiration__title {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 42.5rem) {
+  .inspiration__title {
+    font-size: 2rem;
+  }
 }
 .inspiration__content {
   margin-top: var(--gap-s);
   font-family: var(--font-sans);
   font-size: var(--font-size-2);
   color: var(--color-dark-200);
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 50rem) {
+  .inspiration__content {
+    font-size: 1.2rem;
+  }
 }
 .inspiration__content--text {
   margin-top: -20px;
@@ -474,7 +498,12 @@ li {
   display: flex;
   justify-content: center;
 }
-.inspiration__title, .inspiration__content {
+@media screen and (max-width: 50rem) {
+  .inspiration__content--text {
+    font-size: 1.2rem;
+  }
+}
+.inspiration__title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -487,11 +516,17 @@ li {
   font-weight: 400;
   font-size: var(--font-size-2);
 }
+@media screen and (max-width: 50rem) {
+  .inspiration__button {
+    font-size: 1rem;
+  }
+}
 .inspiration svg {
   opacity: 0.34;
 }
 .inspiration__button:hover {
   color: var(--color-dark-300);
+  transition: all 0.2s;
 }
 
 .image__first {
@@ -516,6 +551,21 @@ li {
   color: var(--color-light);
   opacity: 0.7;
 }
+@media screen and (max-width: 45rem) {
+  .image__text {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 40rem) {
+  .image__text {
+    font-size: 1rem;
+  }
+}
+.image__text:hover {
+  color: var(--color-light-200);
+  opacity: 1;
+  transition: all 0.2s;
+}
 .image__overlay {
   position: absolute;
   top: 0;
@@ -530,7 +580,7 @@ li {
   font-size: var(--font-size-5);
   margin: 0;
   padding-top: var(--gap-xl);
-  color: var(--color-accent);
+  color: var(--color-accent-900);
 }
 .reating__content {
   margin-top: var(--gap-s);
@@ -544,6 +594,12 @@ li {
 }
 .reating__button:hover {
   color: var(--color-dark-300);
+  transition: all 0.2s;
+}
+@media screen and (max-width: 40rem) {
+  .reating__button:hover {
+    font-size: 1rem;
+  }
 }
 .reating__content--text {
   margin-top: -20px;

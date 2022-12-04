@@ -1,9 +1,18 @@
 @use '../../components/buttons';
+@use'../../utilities/responsive';
 
 
 
 .inspiration {
     background-color: var(--color-dark-900);
+    margin: 0;
+    padding: 0;
+
+    &__inner {
+        @include responsive.max (50rem) {
+            margin-top: -40px;
+        }
+    }
 
     &__title {
 
@@ -11,15 +20,28 @@
         font-size: var(--font-size-5);
         margin: 0;
         padding-top: var(--gap-xl);
-        color: var(--color-accent);
+        color: var(--color-accent-900);
+
+        @include responsive.max (50rem) {
+            font-size: 2.5rem
+        }
+
+        @include responsive.max (42.5rem) {
+            font-size: 2rem;
+        }
     }
 
     &__content {
-
         margin-top: var(--gap-s);
         font-family: var(--font-sans);
         font-size: var(--font-size-2);
         color: var(--color-dark-200);
+        display: flex;
+        justify-content: center;
+
+        @include responsive.max (50rem) {
+            font-size: 1.2rem
+        }
     }
 
     &__content--text {
@@ -29,10 +51,13 @@
         color: var(--color-dark-200);
         display: flex;
         justify-content: center;
+
+        @include responsive.max (50rem) {
+            font-size: 1.2rem
+        }
     }
 
-    &__title, 
-    &__content {
+    &__title {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -45,22 +70,22 @@
     color: #222;
     font-weight: 400;
     font-size: var(--font-size-2);
+
+    @include responsive.max (50rem) { //Gör att knappen read more förminskas
+        font-size: 1rem;
+    }
     
     }
 
     svg {
     opacity: 0.34;
     
-    }
+}
 
-    &__button:hover {
+&__button:hover {
     color: var(--color-dark-300);
+    transition: all 0.2s;
     }
-
-    // &__button button:hover {
-    //     transform: rotate(90deg);
-
-    // }
     
 }
 
@@ -86,7 +111,8 @@
         max-width: 1080px;
         margin: 32px auto;
         box-shadow: 5px 5px 20px -5px rgba($color: #000000, $alpha: 0.3)
-    }
+        }
+    
 
     &__text {
         position: absolute;
@@ -94,6 +120,21 @@
         font-size: var(--font-size-4);
         color: var(--color-light);
         opacity: 0.70;
+
+        @include responsive.max (45rem) {
+            font-size: 1.5rem;
+        }
+        @include responsive.max (40rem) {
+            font-size: 1rem;
+
+
+        }
+
+        &:hover {
+            color: var(--color-light-200);
+            opacity: 1;
+            transition: all 0.2s;
+        }
 
     }
 
@@ -106,20 +147,20 @@
         right: 0;
         background-color: #0000001e
     }
-    
 }
 
 
 //RATING
 
 .reating {
+    
 
     &__title {
         font-family: var(--font-serif);
         font-size: var(--font-size-5);
         margin: 0;
         padding-top: var(--gap-xl);
-        color: var(--color-accent);
+        color: var(--color-accent-900);
     }
 
     &__content {
@@ -137,6 +178,11 @@
 
     &__button:hover {
         color: var(--color-dark-300);
+        transition: all 0.2s;
+
+        @include responsive.max (40rem) { //Gör att knappen read more förminskas
+            font-size: 1rem;
+        }
     }
 
     &__content--text {
@@ -174,9 +220,12 @@
         height: 100%;
         width: 100%;
         box-shadow: 5px 5px 20px -5px rgba($color: #000000, $alpha: 0.1)
+        
     }
 
     &__item--tall {
         grid-row: span 2;
     }
 }
+
+
