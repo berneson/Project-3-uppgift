@@ -8,8 +8,6 @@
 
     &__inner {
         text-align: center;
-        display: grid;
-        justify-items: center;
 
         @include responsive.max (50rem) {
             margin-top: -40px;
@@ -26,7 +24,6 @@
 
         @include responsive.max (50rem) {
             font-size: 2.5rem;
-            margin-left: 1rem;
         }
 
         @include responsive.max (42.5rem) {
@@ -41,14 +38,16 @@
         color: var(--color-dark-200);
         max-width: 40rem;
         text-align: center;
+        line-height: 1.5;
 
-        @include responsive.max (50rem) {
+
+        @include responsive.max (42.5rem) {
             font-size: 1.2rem;
             margin-left: 1rem;
         }
     }
 
-
+    &__content,
     &__title {
         display: flex;
         justify-content: center;
@@ -67,14 +66,15 @@
         
         svg {
             transition: all 0.2s;
-            opacity: 0.34;
+            opacity: 1;
         }
         
         &:hover {
-            color: var(--color-dark-300);
+            color: #222;
+            opacity: 0.34;
             transition: all 0.2s;
             svg {
-                opacity: 1;
+                opacity: 0.54;
                 transform: rotate(90deg);
             }
         }
@@ -115,7 +115,8 @@
 
         &:hover .image__overlay { //Lägger hover här - eftersom det då påverkar alla innanför gallery__item när man håller över
             opacity: 1;
-            font-size: var(--font-size-2);
+            font-size: var(--font-size-4);
+            font-family: var(--font-serif);
             transition: all 0.5s;
         }
         }
@@ -183,14 +184,19 @@
     }
 
     &__content {
-        margin-top: var(--gap-s);
+        margin: var(--gap-s) auto var(--gap-s);
         font-family: var(--font-sans);
         font-size: var(--font-size-2);
+        color: var(--color-dark-200);
         max-width: 40rem;
+        text-align: center;
+        line-height: 1.5;
 
-        @include responsive.max (50rem) {
+        @include responsive.max (42.5rem) {
             font-size: 1.2rem
         }
+
+        
     }
 
     &__title,
@@ -200,27 +206,6 @@
         align-items: center;
     }
 
-    &__button:hover {
-        color: var(--color-dark-300);
-        transition: all 0.2s;
-
-        @include responsive.max (40rem) { //Gör att knappen read more förminskas
-            font-size: 1rem;
-        }
-    }
-
-    &__content--text {
-        margin-top: -20px;
-        font-family: var(--font-sans);
-        font-size: var(--font-size-2);
-        color: var(--color-dark-200);
-        display: flex;
-        justify-content: center;   
-
-        @include responsive.max (50rem) {
-            font-size: 1.2rem
-        }
-    }
 }
 
 
@@ -229,6 +214,7 @@
 //GALLERY
 
 .gallery {
+    margin: 32px auto;
     display: grid;
     justify-content: center;
     max-width: 1080px;
@@ -277,6 +263,8 @@
         align-items: center;
         opacity: 0;
         transition: all 0.2s;
+        font-size: var(--font-size-4);
+        font-family: var(--font-serif);
     }
 }
 

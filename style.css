@@ -457,8 +457,6 @@ li {
 }
 .inspiration__inner {
   text-align: center;
-  display: grid;
-  justify-items: center;
 }
 @media screen and (max-width: 50rem) {
   .inspiration__inner {
@@ -475,7 +473,6 @@ li {
 @media screen and (max-width: 50rem) {
   .inspiration__title {
     font-size: 2.5rem;
-    margin-left: 1rem;
   }
 }
 @media screen and (max-width: 42.5rem) {
@@ -490,14 +487,15 @@ li {
   color: var(--color-dark-200);
   max-width: 40rem;
   text-align: center;
+  line-height: 1.5;
 }
-@media screen and (max-width: 50rem) {
+@media screen and (max-width: 42.5rem) {
   .inspiration__content {
     font-size: 1.2rem;
     margin-left: 1rem;
   }
 }
-.inspiration__title {
+.inspiration__content, .inspiration__title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -512,14 +510,15 @@ li {
 }
 .inspiration__button svg {
   transition: all 0.2s;
-  opacity: 0.34;
+  opacity: 1;
 }
 .inspiration__button:hover {
-  color: var(--color-dark-300);
+  color: #222;
+  opacity: 0.34;
   transition: all 0.2s;
 }
 .inspiration__button:hover svg {
-  opacity: 1;
+  opacity: 0.54;
   transform: rotate(90deg);
 }
 @media screen and (max-width: 50rem) {
@@ -546,7 +545,8 @@ li {
 }
 .image__inner:hover .image__overlay {
   opacity: 1;
-  font-size: var(--font-size-2);
+  font-size: var(--font-size-4);
+  font-family: var(--font-serif);
   transition: all 0.5s;
 }
 .image__text {
@@ -603,12 +603,15 @@ li {
   }
 }
 .reating__content {
-  margin-top: var(--gap-s);
+  margin: var(--gap-s) auto var(--gap-s);
   font-family: var(--font-sans);
   font-size: var(--font-size-2);
+  color: var(--color-dark-200);
   max-width: 40rem;
+  text-align: center;
+  line-height: 1.5;
 }
-@media screen and (max-width: 50rem) {
+@media screen and (max-width: 42.5rem) {
   .reating__content {
     font-size: 1.2rem;
   }
@@ -618,30 +621,9 @@ li {
   justify-content: center;
   align-items: center;
 }
-.reating__button:hover {
-  color: var(--color-dark-300);
-  transition: all 0.2s;
-}
-@media screen and (max-width: 40rem) {
-  .reating__button:hover {
-    font-size: 1rem;
-  }
-}
-.reating__content--text {
-  margin-top: -20px;
-  font-family: var(--font-sans);
-  font-size: var(--font-size-2);
-  color: var(--color-dark-200);
-  display: flex;
-  justify-content: center;
-}
-@media screen and (max-width: 50rem) {
-  .reating__content--text {
-    font-size: 1.2rem;
-  }
-}
 
 .gallery {
+  margin: 32px auto;
   display: grid;
   justify-content: center;
   max-width: 1080px;
@@ -682,6 +664,8 @@ li {
   align-items: center;
   opacity: 0;
   transition: all 0.2s;
+  font-size: var(--font-size-4);
+  font-family: var(--font-serif);
 }
 
 /*# sourceMappingURL=style.css.map */
