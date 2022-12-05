@@ -1,14 +1,16 @@
 @use '../../components/buttons';
 @use'../../utilities/responsive';
 
-
-
 .inspiration {
     background-color: var(--color-dark-900);
     margin: 0;
     padding: 0;
 
     &__inner {
+        text-align: center;
+        display: grid;
+        justify-items: center;
+
         @include responsive.max (50rem) {
             margin-top: -40px;
         }
@@ -20,6 +22,155 @@
         font-size: var(--font-size-5);
         margin: 0;
         padding-top: var(--gap-xl);
+        color: var(--color-accent-900);
+
+        @include responsive.max (50rem) {
+            font-size: 2.5rem;
+            margin-left: 1rem;
+        }
+
+        @include responsive.max (42.5rem) {
+            font-size: 2rem;
+        }
+    }
+
+    &__content {
+        margin: var(--gap-s) auto var(--gap-s);
+        font-family: var(--font-sans);
+        font-size: var(--font-size-2);
+        color: var(--color-dark-200);
+        max-width: 40rem;
+        text-align: center;
+
+        @include responsive.max (50rem) {
+            font-size: 1.2rem;
+            margin-left: 1rem;
+        }
+    }
+
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__button {
+        display: inline-flex; //Anpassar sig efter innehållet
+        justify-content: center;
+        align-items: center;
+        color: #222;
+        font-weight: 400;
+        font-size: var(--font-size-2);
+
+        
+        
+        svg {
+            transition: all 0.2s;
+            opacity: 0.34;
+        }
+        
+        &:hover {
+            color: var(--color-dark-300);
+            transition: all 0.2s;
+            svg {
+                opacity: 1;
+                transform: rotate(90deg);
+            }
+        }
+
+        @include responsive.max (50rem) { //Gör att knappen read more förminskas
+        font-size: 1rem;
+        }
+    
+    }
+
+    
+}
+
+
+
+
+// IMAGE
+
+
+.image {
+
+    &__first {
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    
+    &__inner {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1080px;
+        width: 100%;
+        margin: 32px auto;
+        box-shadow: 5px 5px 20px -5px rgba($color: #000000, $alpha: 0.3);
+
+        &:hover .image__overlay { //Lägger hover här - eftersom det då påverkar alla innanför gallery__item när man håller över
+            opacity: 1;
+            font-size: var(--font-size-2);
+            transition: all 0.5s;
+        }
+        }
+    
+
+    &__text {
+        position: absolute;
+        font-family: var(--font-serif);
+        font-size: var(--font-size-4);
+        color: var(--color-light);
+        opacity: 0.70;
+
+        @include responsive.max (45rem) {
+            font-size: 1.5rem;
+        }
+
+        @include responsive.max (40rem) {
+            font-size: 1rem;
+        }
+
+        &:hover {
+            color: var(--color-light-200);
+            opacity: 1;
+            transition: all 0.2s;
+        }
+
+    }
+
+    
+    &__overlay {
+            position: absolute; //Gör att den stannar
+            background-color: rgba(0,0,0,0.2);
+            color: var(--color-light-200);
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.2s;
+    }
+}
+
+
+//RATING
+
+.reating {
+    
+
+    &__title {
+        font-family: var(--font-serif);
+        font-size: var(--font-size-5);
+        margin: 0;
+        padding-top: var(--gap-m);
         color: var(--color-accent-900);
 
         @include responsive.max (50rem) {
@@ -35,138 +186,11 @@
         margin-top: var(--gap-s);
         font-family: var(--font-sans);
         font-size: var(--font-size-2);
-        color: var(--color-dark-200);
-        display: flex;
-        justify-content: center;
+        max-width: 40rem;
 
         @include responsive.max (50rem) {
             font-size: 1.2rem
         }
-    }
-
-    &__content--text {
-        margin-top: -20px;
-        font-family: var(--font-sans);
-        font-size: var(--font-size-2);
-        color: var(--color-dark-200);
-        display: flex;
-        justify-content: center;
-
-        @include responsive.max (50rem) {
-            font-size: 1.2rem
-        }
-    }
-
-    &__title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    &__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #222;
-    font-weight: 400;
-    font-size: var(--font-size-2);
-
-    @include responsive.max (50rem) { //Gör att knappen read more förminskas
-        font-size: 1rem;
-    }
-    
-    }
-
-    svg {
-    opacity: 0.34;
-    
-}
-
-&__button:hover {
-    color: var(--color-dark-300);
-    transition: all 0.2s;
-    }
-    
-}
-
-
-
-
-// IMAGE
-
-.image {
-    
-    &__first {
-        height: 400px;
-        width: 100%;
-        object-fit: cover;
-        display: block;
-    }
-    
-    &__inner {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        max-width: 1080px;
-        margin: 32px auto;
-        box-shadow: 5px 5px 20px -5px rgba($color: #000000, $alpha: 0.3)
-        }
-    
-
-    &__text {
-        position: absolute;
-        font-family: var(--font-serif);
-        font-size: var(--font-size-4);
-        color: var(--color-light);
-        opacity: 0.70;
-
-        @include responsive.max (45rem) {
-            font-size: 1.5rem;
-        }
-        @include responsive.max (40rem) {
-            font-size: 1rem;
-
-
-        }
-
-        &:hover {
-            color: var(--color-light-200);
-            opacity: 1;
-            transition: all 0.2s;
-        }
-
-    }
-
-    
-    &__overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background-color: #0000001e
-    }
-}
-
-
-//RATING
-
-.reating {
-    
-
-    &__title {
-        font-family: var(--font-serif);
-        font-size: var(--font-size-5);
-        margin: 0;
-        padding-top: var(--gap-xl);
-        color: var(--color-accent-900);
-    }
-
-    &__content {
-        margin-top: var(--gap-s);
-        font-family: var(--font-sans);
-        font-size: var(--font-size-2);
     }
 
     &__title,
@@ -192,6 +216,10 @@
         color: var(--color-dark-200);
         display: flex;
         justify-content: center;   
+
+        @include responsive.max (50rem) {
+            font-size: 1.2rem
+        }
     }
 }
 
@@ -203,15 +231,25 @@
 .gallery {
     display: grid;
     justify-content: center;
-    padding: 32px;
+    max-width: 1080px;
     gap: var(--gap-s);
-    grid-template-columns: repeat(3, 350px);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: repeat(2, 250px);
     
 
     &__item {
+        position: relative; //För att overlay ska kunna hålla sig innanför varje img.
         margin: 0;
         padding: 0;
+
+        &:hover .gallery__overlay { //Lägger hover här - eftersom det då påverkar alla innanför gallery__item när man håller över
+            opacity: 1;
+            transition: all 0.2s;
+        }
+    }
+
+    &__image {
+        display: block;
     }
 
     &__item,
@@ -225,6 +263,20 @@
 
     &__item--tall {
         grid-row: span 2;
+    }
+
+    &__overlay {
+        position: absolute; //Gör att den stannar
+        background-color: rgba(0,0,0,0.2);
+        color: var(--color-light-200);
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: all 0.2s;
     }
 }
 

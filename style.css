@@ -455,6 +455,11 @@ li {
   margin: 0;
   padding: 0;
 }
+.inspiration__inner {
+  text-align: center;
+  display: grid;
+  justify-items: center;
+}
 @media screen and (max-width: 50rem) {
   .inspiration__inner {
     margin-top: -40px;
@@ -470,6 +475,7 @@ li {
 @media screen and (max-width: 50rem) {
   .inspiration__title {
     font-size: 2.5rem;
+    margin-left: 1rem;
   }
 }
 @media screen and (max-width: 42.5rem) {
@@ -478,29 +484,17 @@ li {
   }
 }
 .inspiration__content {
-  margin-top: var(--gap-s);
+  margin: var(--gap-s) auto var(--gap-s);
   font-family: var(--font-sans);
   font-size: var(--font-size-2);
   color: var(--color-dark-200);
-  display: flex;
-  justify-content: center;
+  max-width: 40rem;
+  text-align: center;
 }
 @media screen and (max-width: 50rem) {
   .inspiration__content {
     font-size: 1.2rem;
-  }
-}
-.inspiration__content--text {
-  margin-top: -20px;
-  font-family: var(--font-sans);
-  font-size: var(--font-size-2);
-  color: var(--color-dark-200);
-  display: flex;
-  justify-content: center;
-}
-@media screen and (max-width: 50rem) {
-  .inspiration__content--text {
-    font-size: 1.2rem;
+    margin-left: 1rem;
   }
 }
 .inspiration__title {
@@ -509,24 +503,29 @@ li {
   align-items: center;
 }
 .inspiration__button {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   color: #222;
   font-weight: 400;
   font-size: var(--font-size-2);
 }
-@media screen and (max-width: 50rem) {
-  .inspiration__button {
-    font-size: 1rem;
-  }
-}
-.inspiration svg {
+.inspiration__button svg {
+  transition: all 0.2s;
   opacity: 0.34;
 }
 .inspiration__button:hover {
   color: var(--color-dark-300);
   transition: all 0.2s;
+}
+.inspiration__button:hover svg {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+@media screen and (max-width: 50rem) {
+  .inspiration__button {
+    font-size: 1rem;
+  }
 }
 
 .image__first {
@@ -541,8 +540,14 @@ li {
   justify-content: center;
   align-items: center;
   max-width: 1080px;
+  width: 100%;
   margin: 32px auto;
   box-shadow: 5px 5px 20px -5px rgba(0, 0, 0, 0.3);
+}
+.image__inner:hover .image__overlay {
+  opacity: 1;
+  font-size: var(--font-size-2);
+  transition: all 0.5s;
 }
 .image__text {
   position: absolute;
@@ -568,24 +573,45 @@ li {
 }
 .image__overlay {
   position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--color-light-200);
   top: 0;
-  left: 0;
   bottom: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.1176470588);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.2s;
 }
 
 .reating__title {
   font-family: var(--font-serif);
   font-size: var(--font-size-5);
   margin: 0;
-  padding-top: var(--gap-xl);
+  padding-top: var(--gap-m);
   color: var(--color-accent-900);
+}
+@media screen and (max-width: 50rem) {
+  .reating__title {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 42.5rem) {
+  .reating__title {
+    font-size: 2rem;
+  }
 }
 .reating__content {
   margin-top: var(--gap-s);
   font-family: var(--font-sans);
   font-size: var(--font-size-2);
+  max-width: 40rem;
+}
+@media screen and (max-width: 50rem) {
+  .reating__content {
+    font-size: 1.2rem;
+  }
 }
 .reating__title, .reating__content {
   display: flex;
@@ -609,18 +635,31 @@ li {
   display: flex;
   justify-content: center;
 }
+@media screen and (max-width: 50rem) {
+  .reating__content--text {
+    font-size: 1.2rem;
+  }
+}
 
 .gallery {
   display: grid;
   justify-content: center;
-  padding: 32px;
+  max-width: 1080px;
   gap: var(--gap-s);
-  grid-template-columns: repeat(3, 350px);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-rows: repeat(2, 250px);
 }
 .gallery__item {
+  position: relative;
   margin: 0;
   padding: 0;
+}
+.gallery__item:hover .gallery__overlay {
+  opacity: 1;
+  transition: all 0.2s;
+}
+.gallery__image {
+  display: block;
 }
 .gallery__item, .gallery__image {
   object-fit: cover;
@@ -630,6 +669,19 @@ li {
 }
 .gallery__item--tall {
   grid-row: span 2;
+}
+.gallery__overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--color-light-200);
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.2s;
 }
 
 /*# sourceMappingURL=style.css.map */
